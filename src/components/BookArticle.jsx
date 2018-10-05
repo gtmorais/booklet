@@ -55,4 +55,4 @@ BookIndex.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(BookIndex);
+export default withStyles(styles)(BookArticle);
