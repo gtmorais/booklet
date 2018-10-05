@@ -14,7 +14,7 @@ const styles = theme => ({
     },
 });
 
-class BookIndex extends React.Component {
+class BookArticle extends React.Component {
     state = {
         value: 0,
     };

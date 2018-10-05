@@ -12,7 +12,8 @@ class App extends Component {
         <div className="App">
           <ButtonAppBar></ButtonAppBar>
           <Route exact path="/" component={BooksTabs} />
-          <Route path="/index" component={BookIndex} />
+          <Route path="/index/:number" component={BookIndex} />
+          <Route onEnter={() => window.location.reload()} />
         </div>
       </Router>
     );
