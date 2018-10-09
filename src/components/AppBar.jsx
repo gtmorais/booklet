@@ -25,17 +25,21 @@ const styles = {
 
 function ButtonAppBar(props) {
   const { classes } = props;
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
+            <MenuIcon>
+            </MenuIcon>
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.flex}>
             Title
           </Typography>
-          <Link to="/" className="navBarLink"><Button className="navBarLink">Home</Button></Link>
+          <Link to="/" className="navBarLink">
+            <Button className="navBarLink">Home</Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>

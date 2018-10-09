@@ -26,6 +26,15 @@
   height: 36%;
 }
 
+.alignRightBack
+{
+    float: right!important;
+    text-align: right !important;
+    background-color: white;
+    border: 0px;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 1000px) {
   .mainImage {
     width: 70%;

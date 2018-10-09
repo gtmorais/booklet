@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from "react-router-dom";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -15,25 +16,24 @@ const styles = theme => ({
 });
 
 class BookIndex extends React.Component {
-    state = {
-        value: 0,
-    };
-
     componentDidMount() {
         var booksContent = ListBooks();
-        this.setState({
-            ...this.state,
-            content: booksContent,
-        });
+        if (booksContent != null) {
+            let filteredBooks = booksContent.default.filter((f) => f.book === this.props.match.params.number);
+
+            this.setState({
+                ...this.state,
+                content: filteredBooks
+            });
+        }
     }
 
     createTable() {
-        debugger;
         let children = [];
-        for (let i = 0; i < this.state.content.default.length; i++) {
+        for (let i = 0; i < this.state.content.length; i++) {
             children.push(
-                <ListItem key={i} button divider>
-                    <ListItemText primary={this.state.content.default[i].title} />
+                <ListItem key={this.state.content[i].id} button divider component={Link} to={`/article/${this.state.content[i].id}`}>
+                    <ListItemText primary={this.state.content[i].title} />
                 </ListItem>);
         }
         return children;
@@ -44,7 +44,7 @@ class BookIndex extends React.Component {
         return (
             <div className={classes.root}>
                 <List component="nav">
-                    { this.state.content && this.createTable() } 
+                    {this.state && this.state.content && this.createTable()}
                 </List>
             </div>
         )

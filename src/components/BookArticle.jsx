@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import ListBooks from '../services/BookService';
+import '../App.css';
 
 const styles = theme => ({
     root: {
-        width: '100%',
-        maxWidth: '100%',
+        width: '98%',
+        maxWidth: '98%',
         backgroundColor: theme.palette.background.paper,
     },
 });
@@ -19,39 +17,31 @@ class BookArticle extends React.Component {
         value: 0,
     };
 
+    createMarkup(value) {
+        return { __html: value };
+    }
+
     componentDidMount() {
         var booksContent = ListBooks();
         this.setState({
             ...this.state,
             content: booksContent,
+            id : this.props.match.params.number
         });
-    }
-
-    createTable() {
-        debugger;
-        let children = [];
-        for (let i = 0; i < this.state.content.default.length; i++) {
-            children.push(
-                <ListItem key={i} button divider>
-                    <ListItemText primary={this.state.content.default[i].title} />
-                </ListItem>);
-        }
-        return children;
     }
 
     render() {
         const { classes, theme } = this.props;
         return (
             <div className={classes.root}>
-                <List component="nav">
-                    { this.state.content && this.createTable() } 
-                </List>
+               <button onClick={this.props.history.goBack} className="alignRightBack">VOLTAR</button>
+               {(this.state && this.state.content) ? <div dangerouslySetInnerHTML={this.createMarkup(this.state.content.default[this.state.id].content)}></div> : ""}
             </div>
         )
     };
 }
 
-BookIndex.propTypes = {
+BookArticle.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 

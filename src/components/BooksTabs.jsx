@@ -8,7 +8,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import '../App.css';
-import ListBooks from '../services/BookService';
+
 
 function TabContainer({ children, dir }) {
   return (
@@ -34,14 +34,6 @@ class BooksTabs extends React.Component {
   state = {
     value: 0,
   };
-
-  componentDidMount() {
-    var myContent = ListBooks();
-    this.setState({
-      ...this.state,
-      content: myContent,
-    });
-  }
 
   handleChange = (event, value) => {
     this.setState({ value });
@@ -75,17 +67,17 @@ class BooksTabs extends React.Component {
           onChangeIndex={this.handleChangeIndex}>
           <TabContainer dir={theme.direction}>
             <Link to="/index/1">
-              <img src="https://cdn1.iconfinder.com/data/icons/metro-ui-dock-icon-set--icons-by-dakirby/512/Windows.png" className="mainImage" />
+              <img src="https://cdn1.iconfinder.com/data/icons/metro-ui-dock-icon-set--icons-by-dakirby/512/Windows.png" alt="Caderno 3" className="mainImage" />
             </Link>
           </TabContainer>
           <TabContainer dir={theme.direction}>
             <Link to="/index/2">
-              <img src="https://cdn2.iconfinder.com/data/icons/metro-ui-dock/512/Microsoft.png" className="mainImage" />
+              <img src="https://cdn2.iconfinder.com/data/icons/metro-ui-dock/512/Microsoft.png" alt="Caderno 2" className="mainImage" />
             </Link>
           </TabContainer>
           <TabContainer dir={theme.direction}>
             <Link to="/index/3">
-              <img src="https://cdn2.iconfinder.com/data/icons/metro-ui-icon-set/512/Microsoft_New_Logo.png" className="mainImage" />
+              <img src="https://cdn2.iconfinder.com/data/icons/metro-ui-icon-set/512/Microsoft_New_Logo.png" alt="Caderno 1" className="mainImage" />
             </Link>
           </TabContainer>
         </SwipeableViews>
