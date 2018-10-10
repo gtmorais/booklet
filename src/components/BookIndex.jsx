@@ -19,7 +19,7 @@ class BookIndex extends React.Component {
     componentDidMount() {
         var booksContent = ListBooks();
         if (booksContent != null) {
-            let filteredBooks = booksContent.default.filter((f) => f.book === this.props.match.params.number);
+            let filteredBooks = booksContent.default.filter((f) => f.book == this.props.match.params.number);
 
             this.setState({
                 ...this.state,
