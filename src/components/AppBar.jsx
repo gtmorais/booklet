@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Divider from '@material-ui/core/Divider';
-import List from '@material-ui/core/List';  
+import List from '@material-ui/core/List';
 import '../App.css';
 import Drawer from '@material-ui/core/Drawer';
 
@@ -25,6 +25,7 @@ const styles = theme => ({
     marginRight: 20,
   },
   list: {
+    marginLeft: 12,
     width: 250,
   },
   fullList: {
@@ -47,9 +48,21 @@ class ButtonAppBar extends React.Component {
 
     const sideList = (
       <div className={classes.list}>
-        <List>aaaaaaaaa</List>
+        <Link to="/">
+          <List>Início</List>
+        </Link>
         <Divider />
-        <List>bbbbbbb</List>
+        <Link to="/index/1">
+          <List>Caderno 1</List>
+        </Link>
+        <Divider />
+        <Link to="/index/2">
+          <List>Caderno 2</List>
+        </Link>
+        <Divider />
+        <Link to="/index/3">
+          <List>Caderno 3</List>
+        </Link>
         <Divider />
       </div>
     );
@@ -65,10 +78,10 @@ class ButtonAppBar extends React.Component {
             </IconButton>
 
             <Typography variant="title" color="inherit" className={classes.flex}>
-              Title
+              Aprendiz de Sonhador
           </Typography>
             <Link to="/" className="navBarLink">
-              <Button className="navBarLink">Home</Button>
+              <Button className="navBarLink">Início</Button>
             </Link>
           </Toolbar>
         </AppBar>

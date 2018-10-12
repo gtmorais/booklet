@@ -56,9 +56,9 @@ class BooksTabs extends React.Component {
             textColor="primary"
             fullWidth
           >
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
-            <Tab label="Item Three" />
+            <Tab label="Caderno 3" />
+            <Tab label="Caderno 2" />
+            <Tab label="Carderno 1" />
           </Tabs>
         </AppBar>
         <SwipeableViews
@@ -66,7 +66,7 @@ class BooksTabs extends React.Component {
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}>
           <TabContainer dir={theme.direction}>
-            <Link to="/index/1">
+            <Link to="/index/3">
               <img src="https://cdn1.iconfinder.com/data/icons/metro-ui-dock-icon-set--icons-by-dakirby/512/Windows.png" alt="Caderno 3" className="mainImage" />
             </Link>
           </TabContainer>
@@ -76,7 +76,7 @@ class BooksTabs extends React.Component {
             </Link>
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <Link to="/index/3">
+            <Link to="/index/1">
               <img src="https://cdn2.iconfinder.com/data/icons/metro-ui-icon-set/512/Microsoft_New_Logo.png" alt="Caderno 1" className="mainImage" />
             </Link>
           </TabContainer>

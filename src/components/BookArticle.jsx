@@ -13,9 +13,6 @@ const styles = theme => ({
 });
 
 class BookArticle extends React.Component {
-    state = {
-        value: 0,
-    };
 
     createMarkup(value) {
         return { __html: value };
