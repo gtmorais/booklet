@@ -8,6 +8,7 @@ const styles = theme => ({
     root: {
         width: '98%',
         maxWidth: '98%',
+        padding : '10px',
         backgroundColor: theme.palette.background.paper,
     },
 });
@@ -31,8 +32,8 @@ class BookArticle extends React.Component {
         const { classes, theme } = this.props;
         return (
             <div className={classes.root}>
-               <button onClick={this.props.history.goBack} className="alignRightBack">VOLTAR</button>
-               {(this.state && this.state.content) ? <div dangerouslySetInnerHTML={this.createMarkup(this.state.content.default[this.state.id].content)}></div> : ""}
+               <button onClick={this.props.history.goBack} className="alignRightBack">VOLTAR</button><br />
+               {(this.state && this.state.content) ? <div dangerouslySetInnerHTML={this.createMarkup(this.state.content.default[this.state.id-1].content)}></div> : ""}
             </div>
         )
     };

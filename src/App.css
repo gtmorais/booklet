@@ -48,3 +48,43 @@
     height: 86%;
   }
 }
+
+.container {
+  margin: auto;
+  padding: 10px;
+  align-content: center;
+  align-self: center;
+}
+
+.one {
+  float: left;
+  border-radius: 12px !important;
+  background-color: cornflowerblue;
+  color: #fff;
+  border-color: #337ab7;
+  align-content: center;
+  margin-right: 10px; 
+}
+
+.two {
+  padding: 4px;
+  border-radius: 12px !important; 
+  background-color:#f5f5f5;
+  border-color: #ddd;
+  align-content: center;
+}
+
+.articleBody {
+  text-align: justify;
+  text-justify: inter-word;
+  padding: 8px;
+}
+
+.articleTitle {
+  margin: auto;
+  padding: 10px;
+  border-radius: 12px !important; 
+  align-content: center;
+  align-self: center;
+  background-color:#f5f5f5;
+}
